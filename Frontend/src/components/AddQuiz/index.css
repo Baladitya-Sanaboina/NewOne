@@ -1,0 +1,133 @@
+/* Container */
+.add-quiz-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Panel Styling */
+.left-panel {
+  flex: 0.3; /* 30% width */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.right-panel {
+  flex: 0.7; /* 70% width */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content {
+  margin-top: 20px;
+}
+
+/* Input Styling */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.outlined-btn {
+  border: 1px solid #007d9d; /* Updated color */
+  color: #007d9d; /* Updated color */
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
+select.outlined-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #007d9d; /* Updated color */
+  color: #007d9d; /* Updated color */
+  background: none;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #007d9d; /* Updated color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+/* Question List */
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.question-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between; /* Align title and delete button */
+  align-items: center; /* Center vertically */
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff6f61; /* Optional color for delete button */
+}
+
+/* Additional Button Styling */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .add-quiz-container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

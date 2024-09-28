@@ -1,0 +1,147 @@
+/* QuizList.css */
+.quiz-list-container {
+  padding: 30px;
+  background-color: #f4f9fc;
+  min-height: 100vh;
+}
+
+.quiz-list-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-list-header h1 {
+  color: #007d9d;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.add-quiz-btn {
+  background-color: #007d9d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.add-quiz-btn:hover {
+  background-color: #005f7d;
+}
+
+.quiz-list-content {
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.quiz-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.quiz-item:hover {
+  transform: translateY(-10px);
+}
+
+.quiz-content {
+  text-align: left;
+}
+
+.quiz-title {
+  color: #007d9d;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.quiz-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.quiz-actions {
+  margin-top: 10px;
+  display: flex; /* Display flex for side-by-side buttons */
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.edit-quiz-btn,
+.delete-quiz-btn {
+  background-color: #007d9d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.edit-quiz-btn:hover {
+  background-color: #005f7d;
+}
+
+.delete-quiz-btn {
+  background-color: #005f7d; /* Default delete button color */
+}
+
+.delete-quiz-btn:hover {
+  background-color: #005f7d; /* Change to darker red on hover */
+}
+
+.edit-quiz-btn svg,
+.delete-quiz-btn svg {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-title {
+    font-size: 20px;
+  }
+
+  .quiz-description {
+    font-size: 14px;
+  }
+
+  .add-quiz-btn,
+  .edit-quiz-btn,
+  .delete-quiz-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .quiz-title {
+    font-size: 22px;
+  }
+
+  .quiz-description {
+    font-size: 15px;
+  }
+}

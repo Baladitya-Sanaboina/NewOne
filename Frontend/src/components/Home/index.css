@@ -1,0 +1,116 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(135deg, #007d9d, #14a4c9); /* Updated gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Quiz Categories Section */
+.categories-section {
+  padding: 40px 20px;
+  background-color: #f0f2f5;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007d9d; /* Updated color */
+}
+
+.quiz-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .quiz-categories {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}
+
+/* Category Card */
+.category-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.category-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.category-content h3 {
+  font-size: 1.8rem;
+  color: #007d9d; /* Updated color */
+  margin-bottom: 10px;
+}
+
+.category-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.category-content button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007d9d, #14a4c9); /* Updated gradient */
+  border: none;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.category-content button:hover {
+  background: linear-gradient(
+    135deg,
+    #14a4c9,
+    #007d9d
+  ); /* Reverse gradient on hover */
+}
