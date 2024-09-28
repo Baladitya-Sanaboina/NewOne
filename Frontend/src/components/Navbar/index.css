@@ -1,19 +1,11 @@
+/* Base Styles */
 .nav-header {
-  padding-left: 60px;
-  padding-right: 60px;
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-left-width: 0px;
-  border-bottom-width: 1px;
-  border-width: 0px 0px 1px;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 78px;
-  display: flex;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  border-style: solid;
-  border-color: rgb(229, 231, 235);
+  padding: 15px 60px;
+  background-color: white; /* Set background to white */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
 .nav-content {
@@ -23,31 +15,6 @@
   width: 100%;
 }
 
-.nav-bar-mobile-logo-container {
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-}
-
-.website-logo {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  vertical-align: middle;
-}
-
-.nav-mobile-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.nav-bar-image {
-  width: 24px;
-  height: 24px;
-}
-
 .nav-bar-large-container {
   display: flex;
   align-items: center;
@@ -55,38 +22,109 @@
   width: 100%;
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.website-logo {
+  max-width: 120px; /* Limit logo size */
+  height: auto;
+}
+
 .nav-menu {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  column-gap: 20px;
+  gap: 40px; /* Increased space between items */
 }
 
 .nav-menu-item {
-  border-width: 0px;
-  border-style: solid;
-  border-color: rgb(229, 231, 235);
+  position: relative; /* For dropdown indicators */
 }
 
 .nav-link {
   text-transform: uppercase;
-  padding: 12px;
-  display: inline-block;
-  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  color: #333; /* Darker text color */
   text-decoration: none;
+  border-radius: 4px; /* Rounded corners */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  /* Light background on hover */
+  color: #007b9c; /* Change text color on hover */
+}
+
+/* Active link style */
+.nav-link.active {
+  color: #007b9c; /* Change color of active link */
+  font-weight: bold; /* Make active link bold */
+}
+
+/* Underline for active link */
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Line thickness */
+  background-color: #007b9c; /* Line color */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Positioning the line below the text */
+}
+
+/* Underline on hover */
+.nav-link:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Line thickness */
+  background-color: #007b9c; /* Line color */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Positioning the line below the text */
 }
 
 .logout-desktop-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
+  font-size: 18px;
+  color: #007bff; /* Change logout button color */
 }
 
+.nav-hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hide by default */
+  color: #007bff; /* Change hamburger icon color */
+  font-size: 24px;
+}
+
+/* Mobile Menu Styles */
 .nav-menu-mobile {
-  display: none; /* Adjust this to be visible on mobile */
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 70px; /* Adjust to be below nav */
+  right: 30px;
+  background: white; /* Set mobile menu background to white */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for mobile menu */
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition for mobile menu */
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Initially hidden */
+}
+
+.nav-menu-mobile.open {
+  display: block; /* Show mobile menu when open */
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Make visible */
 }
 
 .nav-menu-list-mobile {
@@ -94,65 +132,37 @@
   padding: 0;
   margin: 0;
   display: flex;
-  column-gap: 20px;
+  flex-direction: column; /* Vertical layout */
 }
 
 .nav-menu-item-mobile {
-  border-width: 0px;
-  border-style: solid;
-  border-color: rgb(229, 231, 235);
+  padding: 10px 20px; /* Increased padding */
+  border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+.nav-menu-item-mobile:last-child {
+  border-bottom: none; /* Remove last divider */
 }
 
 .nav-menu-item-mobile .nav-link {
-  display: block;
-}
-
-.nav-menu-item-mobile .nav-bar-image {
-  width: 24px;
-  height: 24px;
-}
-.logout-desktop-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: #333; /* Darker text color */
   display: flex;
   align-items: center;
-  column-gap: 8px; /* Adjust space between icon and text */
+}
+
+.nav-bar-image {
+  width: 24px; /* Image size */
+  height: 24px;
+  margin-right: 10px; /* Space between icon and text */
 }
 
 .logout-icon {
   font-size: 30px; /* Adjust the icon size as needed */
 }
 
-/* General styling for nav-header */
-.nav-header {
-  position: relative;
-}
-
-/* Show hamburger button only on mobile devices */
-.nav-hamburger-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none; /* Hide by default */
-}
-
-.hamburger-icon {
-  font-size: 24px;
-  color: #000;
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
-  /* Adjust breakpoint as needed */
-  .nav-bar-large-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .nav-menu {
     display: none; /* Hide desktop menu on mobile */
   }
@@ -162,38 +172,10 @@
   }
 
   .nav-menu-mobile {
-    display: none; /* Hide dropdown menu by default */
-    position: absolute;
-    top: 60px; /* Adjust as needed */
-    right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    display: none; /* Hide mobile menu by default */
   }
 
   .nav-menu-mobile.open {
-    display: block; /* Show dropdown menu when open */
-  }
-
-  .nav-menu-list-mobile {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-menu-item-mobile {
-    padding: 10px;
-  }
-
-  .nav-menu-item-mobile .nav-link {
-    text-decoration: none;
-    color: #333;
-    display: block;
-  }
-
-  .nav-menu-item-mobile .nav-bar-image {
-    width: 24px; /* Adjust size as needed */
+    display: block; /* Show mobile menu when open */
   }
 }
